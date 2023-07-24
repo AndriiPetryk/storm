@@ -1,8 +1,9 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-import Status from './Status/Status';
+import Status from '../Status/Status';
 
 const ProductTable = ({ product, onProductClick }) => {
+
   return (
     <Row
       onClick={() => onProductClick(product.id)}

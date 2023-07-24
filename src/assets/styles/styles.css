@@ -1,0 +1,23 @@
+/* General container styles */
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@media (min-width: 1400px) {
+    .container-xxl,
+    .container-xl,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 1200px;
+    }
+}

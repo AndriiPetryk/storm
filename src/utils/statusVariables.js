@@ -1,4 +1,4 @@
-export const statusColors = (status) => {
+export const statusVariables = (status) => {
   const violet = {backgroundColor: '#EDEDFE', color: '#605DEC'};
   const green = {backgroundColor: '#EBF6EB', color: '#31AA27'};
   const orange = {backgroundColor: '#FFF4E4', color: '#E99518'};

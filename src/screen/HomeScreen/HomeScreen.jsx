@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { Col, Container, Row, Table } from 'react-bootstrap';
-import { Link, useParams } from 'react-router-dom';
-import ProductTable from '../components/ProductTable';
-import ProductScreen from './ProductScreen/ProductScreen';
-import { useGetProductsQuery } from '../slices/productsApiSlice';
-import Loader from '../components/Loader';
-import Message from '../components/Message';
+import React, { useState } from 'react';
+import { Col, Container, Row } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
+import ProductTable from '../../components/ProductTable/ProductTable';
+import ProductScreen from '../ProductScreen/ProductScreen';
+import { useGetProductsQuery } from '../../slices/productsApiSlice';
+import Loader from '../../components/Loader/Loader';
+import Message from '../../components/Message/Message';
 
 const HomeScreen = () => {
   const { keyword } = useParams();
@@ -24,6 +24,10 @@ const HomeScreen = () => {
     return (<Message variant='danger'>
       {error?.data?.message || error.error}
     </Message>);
+  }
+
+  if (products?.length === 0) {
+    return <h2 className="text-center">No Data</h2>
   }
 
   const onProductClick = (id) => {
@@ -46,7 +50,7 @@ const HomeScreen = () => {
           <Col className='d-none d-sm-flex product-price'>Prices</Col>
         </Row>
           {products?.map((product) => (
-            <ProductTable product={product} onProductClick={onProductClick} />
+            <ProductTable product={product} onProductClick={onProductClick} key={product.id}/>
           ))}
         {isModalVisible && <ProductScreen
           productId={productId}
