@@ -22,6 +22,26 @@
     line-height: 25px;
 }
 
+.sort-by-prices {
+    cursor: pointer;
+}
+
+.product-price {
+    position: relative;
+    justify-content: space-between;
+}
+
+.product-price:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 1px;
+    border-left: 1px solid #E4E4EF;
+    top: -24px;
+    bottom: -24px;
+    left: -3px;
+}
+
 .features ul {
     padding-left: 5px;
 }
@@ -192,6 +212,10 @@
     .product-name-header {
         min-width: 37%;
     }
+
+    .product-price:before {
+        left: 8px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -215,6 +239,14 @@
 
     .product-details {
         padding-top: 10px;
+    }
+
+    .modal-backdrop {
+        display: none;
+    }
+
+    .modal-content {
+        border: none;
     }
 }
 

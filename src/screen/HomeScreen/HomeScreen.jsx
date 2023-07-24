@@ -6,6 +6,7 @@ import ProductScreen from '../ProductScreen/ProductScreen';
 import { useGetProductsQuery } from '../../slices/productsApiSlice';
 import Loader from '../../components/Loader/Loader';
 import Message from '../../components/Message/Message';
+import down from '../../assets/img/down.svg';
 
 const HomeScreen = () => {
   const { keyword } = useParams();
@@ -47,7 +48,10 @@ const HomeScreen = () => {
           <Col className='d-none d-sm-flex product-status'>Status</Col>
           <Col className='d-none d-sm-flex product-qt'>Quantity</Col>
           <Col className="product-name product-name-header">Product Name</Col>
-          <Col className='d-none d-sm-flex product-price'>Prices</Col>
+          <Col className='d-none d-sm-flex product-price'>
+            Prices
+            <img src={down} alt='down' className="sort-by-prices"/>
+          </Col>
         </Row>
           {products?.map((product) => (
             <ProductTable product={product} onProductClick={onProductClick} key={product.id}/>

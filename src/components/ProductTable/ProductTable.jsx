@@ -25,7 +25,7 @@ const ProductTable = ({ product, onProductClick }) => {
           <span className='d-inline d-sm-none'>- Qty: {product.quantity}</span>
         </div>
       </Col>
-      <Col className='product-details d-none d-sm-flex product-container-border-left align-content-center'>
+      <Col className='product-details d-none d-sm-flex product-container-border-left align-content-center justify-content-end'>
         {`$${product.total}`}
       </Col>
     </Row>
